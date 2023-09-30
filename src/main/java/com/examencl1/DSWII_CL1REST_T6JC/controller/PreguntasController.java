@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RequestMapping(path = "api/v1/pregunta")
 public class PreguntasController {
-
+    // SERVICE
     private PreguntasService preguntasService;
 
-
+    
+    // ENDPOINTS
     @GetMapping("/pregunta1")
     public ResponseEntity<MensajeResponse> anioBisiesto (@RequestParam Integer anio){
         return new ResponseEntity<>(preguntasService.AnioBisiesto(anio), HttpStatus.OK);
