@@ -9,8 +9,6 @@ import java.util.List;
 
 @Service
 public class PreguntasService {
-
-
     public MensajeResponse AnioBisiesto (Integer numero){
         String resultado;
         resultado=((numero % 4 == 0 && numero % 100 != 0) || (numero % 400 == 0)) ?"Es bisiesto" : "No es Bisiesto";
@@ -34,6 +32,8 @@ public class PreguntasService {
         }
         return MensajeResponse.builder().resultado("Números perfectos encontrados: " + numerosPerfectos).build();
     }
+
+
 
     public boolean esNumeroPerfecto(int numero) {
         int sumaDivisores = 0;
