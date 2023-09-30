@@ -4,6 +4,9 @@ package com.examencl1.DSWII_CL1REST_T6JC.service;
 import com.examencl1.DSWII_CL1REST_T6JC.model.MensajeResponse;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class PreguntasService {
 
@@ -20,17 +23,16 @@ public class PreguntasService {
     }
 
     public MensajeResponse validarNumerosPerfectos(int limite) {
-        StringBuilder numerosPerfectos = new StringBuilder("Números perfectos encontrados: ");
+        List<Integer> numerosPerfectos = new ArrayList<>();
         for (int numero = 1; numero <= limite; numero++) {
             if (esNumeroPerfecto(numero)) {
-                numerosPerfectos.append(numero).append(",");
+                numerosPerfectos.add(numero);
             }
         }
-        if (numerosPerfectos.toString().equals("Números perfectos encontrados: ")) {
+        if (numerosPerfectos.isEmpty()) {
             return MensajeResponse.builder().resultado("No se encontraron números perfectos.").build();
         }
-        numerosPerfectos.delete(numerosPerfectos.length() - 2, numerosPerfectos.length());
-        return MensajeResponse.builder().resultado(numerosPerfectos.toString()).build();
+        return MensajeResponse.builder().resultado("Números perfectos encontrados: " + numerosPerfectos).build();
     }
 
     public boolean esNumeroPerfecto(int numero) {
