@@ -32,9 +32,6 @@ public class PreguntasService {
         }
         return MensajeResponse.builder().resultado("Números perfectos encontrados: " + numerosPerfectos).build();
     }
-
-
-
     public boolean esNumeroPerfecto(int numero) {
         int sumaDivisores = 0;
         for (int i = 1; i < numero; i++) {
@@ -64,5 +61,8 @@ public class PreguntasService {
         }
         return MensajeResponse.builder().resultado(resultado).build();
     }
+
+
+
 
 }
