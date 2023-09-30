@@ -17,7 +17,7 @@ public class PreguntasController {
     // SERVICE
     private PreguntasService preguntasService;
 
-    
+
     // ENDPOINTS
     @GetMapping("/pregunta1")
     public ResponseEntity<MensajeResponse> anioBisiesto (@RequestParam Integer anio){

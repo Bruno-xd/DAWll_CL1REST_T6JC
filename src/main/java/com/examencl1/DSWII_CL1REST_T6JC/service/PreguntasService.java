@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class PreguntasService {
+    // METHODS
     public MensajeResponse AnioBisiesto (Integer numero){
         String resultado;
         resultado=((numero % 4 == 0 && numero % 100 != 0) || (numero % 400 == 0)) ?"Es bisiesto" : "No es Bisiesto";
