@@ -43,5 +43,24 @@ public class PreguntasService {
         return sumaDivisores == numero;
     }
 
+    public MensajeResponse verificarAlcoholemia(char indicadorVehiculo, double tasaAlcohol) {
+        String resultado;
+        switch (indicadorVehiculo) {
+            case 'C':
+            case 'A':
+            case 'M':
+                if (tasaAlcohol <= 0.3) {resultado = "El conductor no da positivo en el control de alcoholemia.";
+                } else { resultado = "El conductor da positivo en el control de alcoholemia."; }
+                break;
+            case 'T':
+                if (tasaAlcohol <= 0.5) {resultado = "El conductor no da positivo en el control de alcoholemia.";
+                } else {resultado = "El conductor da positivo en el control de alcoholemia."; }
+                break;
+            default:
+                resultado = "Indicador de vehículo no válido.";
+                break;
+        }
+        return MensajeResponse.builder().resultado(resultado).build();
+    }
 
 }
